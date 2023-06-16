@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- ************************ STANDARD HEAD *************************** -->
+
+    <meta charset="UTF-8">
+    
+    <!-- This makes the page more mobile friendly. This tells the web browswer how to render the page. This line is effectively saying: make the content render at the width of the device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- This is the label for the browswer tab -->
+    <title>We are the Robots</title>
+
+    <!-- This link is for a subfolder hence the ./foldername/location -->
+    <!-- To jump back a level, use two dots at the beginning -->
+    <link rel="stylesheet" href="./CSS/Style.css" />
+
+    <!-- This link is for an icon         -->
+    <!-- Note that to jump back a folder level, use two dots at the beginning -->   
+    <link rel="icon" href="./images/favicon-16x16.png" type="image/x-icon" >
+
+
+    <!-- ************************* MEDIA QUERIES ***************************** -->
+
+    
+    <!-- Style formatting is usually in the CSS file. The point of media queries is to apply a change to formatting when the media query detects a reason to make a change.
+        
+    The first media query below has a default background colour for a small screen (width <320px). This would normally be defined in the CSS but is ok here for this example. The HTML uses media queries to change the background colour as the screen size exceeds defined boundaries (page 60)
+
+    Media queries can also test for width, height, device width and height, device aspect ratio, various colour specs parameters, resolution, scanning etc (page 62-65).
+
+    Consider them a basic conditional logic which modifies a baseline formatting. The baseline formatting should be set before the media queries are created. 
+    
+    -->
+    <style>
+        body {
+            background-color: rgb(226, 222, 222);
+            }
+            @media screen and (min-width: 320px) {
+            body {
+                background-color: rgb(189, 228, 189);
+            }
+            }
+            @media screen and (min-width: 550px) {
+            body {
+                background-color: rgb(199, 199, 143);
+            }
+            }
+            @media screen and (min-width: 768px) {
+            body {
+                background-color: rgb(218, 192, 145);
+            }
+            }
+            @media screen and (min-width: 960px) {
+            body {
+                background-color: rgb(245, 180, 180);
+            }
+        }
+
+        /* Following section of book from page 66
+        This enables the nav to slide up beside the logo image. 
+        Also note the .masthead{} class formatting on the CSS sheet */
+        /* @media (min-width: 1000px) {
+            .masthead {
+                flex-direction: row;
+                justify-content: space-between;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        } */
+
+        /* On the CSS sheet, there is formatting for the class .nav_section. This margin and padding properties we at the default viewport size. This @media section overwrites the .class formatting if the screen exceeds 800px width. In this case, the margin and padding are reset to 0 
+        When the nav links are below the logo image there is a gap, when the screen extends so the links are on the top right of the screen, the gap above the links is 0.
+        Page 90-92 - modified to make nav menu stack vertically when page is extended, via flex box properties.
+        */
+        /* @media (min-width: 960px) {
+            .nav_section {
+                margin-top: 25;
+                padding: 25;
+                flex-direction: column;
+                align-items: center;
+            }
+        } */
+
+        @media (min-width: 200px) {
+            .last_nav_link {
+                margin-right: 1rem;
+            }
+        }       
+
+        @media (min-width: 800px) {
+            .paragraph_text {
+                font-size: 3em;
+            }
+        }
+
+        /* The hover media feature tests the devices ability to hover over elements on the screen 
+        I haven't figured this out yet*/
+        @media (any-hover: coarse) {
+            .paragraph_text{
+                font-weight: bold;
+            }
+        }
+
+        /* Prefers-color-scheme for adding a dark mode or light mode (page 74) */
+        /* @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #333;
+                color: #ddd
+            }
+        }  */
+
+
+    </style>
+</head>
+
+<!-- ****************************************************************************************************************************************************************************************************************************************************************************************************************************** -->
+
+<body id="wrap">
+
+    <!-- <header class="rwd-MastHead">
+        <a href="/" class="rwd-Logo">
+            <span class="rwd-Logo_Main">RWD</span>
+            <span class="rwd-Logo_Secondary">Education</span>
+        </a> -->
+
+     <header class = "masthead">
+        
+        <!-- Robot Logo Image -->
+        <!-- class="Header_Logo"  -->
+        <img class = header_logo src="Images/kraftwerk-green-man.jpg" alt="Kraftwerk Green Man Logo" />
+
+
+
+    </header>
+
+    <!-- This will be links to other sections on the same page, using the #to direct-->
+    <!-- note that the last nav link has a different name. This is so I can (for example) push it to the other side of the page -->
+    <nav class="nav_section">
+        <a class="nav_link" href="#about">About</a>
+        <a class="nav_link" href="#history">History</a>
+        <a class="nav_link" href="#members">Members</a>
+        <a class="nav_link" href="#albums">Albums</a>
+        <a class="last_nav_link" href="#buy">Buy</a>
+    </nav>
+
+    <article class = article>
+
+        <section>
+            <h1 class = "header_class">WE ARE THE ROBOTS</h1>
+            <p class = paragragh_text>Ralf Hütter and Florian Schneider began the Kraftwerk project in Düsseldorf, Germany, in 1970, setting up the pioneering Kling Klang studio, where all of Kraftwerk’s albums were conceived and composed. By the mid-1970s the group had achieved international recognition for their revolutionary electro “sound paintings” and their musical experimentation with tapes and synthesizers. Their compositions, which feature distant melodies, multilingual vocals, robotic rhythms, and custom-made vocoders and computer-speech technology, almost single-handedly created the soundtrack for our digital future. 
+            <br>
+            <br>
+            Kraftwerk anticipated the impact of technology on art and everyday life, creating sounds and visuals that capture the human condition in the age of mobility and telecommunication. Their innovative looping techniques and computerized rhythms, which had a major influence on the early development of hip-hop and electronic dance music, remain among the most commonly sampled sounds across a wide range of music genres. Furthermore, the use of robotics and other technical innovations in their live performances illustrates Kraftwerk’s belief in the respective contributions of both people and machines in creating art. 
+            <br>
+            <br>
+            In recent years, starting with their performance at the Venice Biennale in 2005, Kraftwerk has been invited into the visual arts context, festivals, and museums, most recently performing at Lenbachhaus Kunstbau in Munich.  </p>
+        </section>
+
+        <section>
+            <nav>
+                <br>
+                <br>
+                <a href="index.html">This is a link to a sheet called index</a>            
+                <br>
+                <br>
+            </nav>
+
+        </section>
+
+        <section>
+            <h1>How to make an image responsive</h1>
+            <div class="scared_robots">
+                <p class="scared_robots">
+                    Occasionally maligned and misunderstood; the robots just want to be friends. 
+                    Without CSS, this image is going to be way too big and stretch beyond the edges of the page
+                    With the img{max-width: 100%} on the CSS sheet, the image will scale to fit the container.
+                </p>
+                <div class="kraftwerk_dusseldorf_original">
+                    <img class="img_scared_robot" src="Images/Kraftwerk_Dusseldorf_Original.jpg" alt="Kreftwerk in Dusseldorf" />
+                    <p class="image_caption">Photograph of Kraftwerk at Dusseldorf Station. Credit: Frähling/Kraftwerk/Getty Images</p>
+                </div>
+            </div>
+        </section>
+
+        <section>    
+
+            <h1>Embedding Video</h1>
+            <!-- <p>This first video is muted with no controls, but will autoplay and loop</p> -->
+            <video muted src="./Video/Kraftwerk_Radioactivity_Edit_01.mp4"
+                width="1440"
+                height="1080"
+                autoplay
+                preload="auto"
+                loop
+                poster="./Images/Kraftwerk_Radio_Activity_album_cover.jpg"
+                >
+                Snip of Kraftwerk's Radioactivity Live
+            </video>
+
+            <!-- <p>This second video has audio but must be started with the play button. It will not loop.</p>
+            <video src="./Video/Robots_Snip_01.mp4"
+                width="1440"
+                height="1080"
+                controls
+                preload="auto"
+                poster="./Images/We_Are_The_Robots.jpg"
+                >
+                Snip of Kraftwerk's The Robots
+            </video> -->
+
+
+            <!-- Linked to YouTube embedded video is not working -->
+            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/D_8Pma1vHmw?clip=Ugkxlre8rOuzoJOj6cUN5KESrFSshv_wUlJf&amp;clipt=EN_hCBjHwgk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+
+        </section>
+
+        <footer>
+            &copy; Copyright
+            <br>
+            &phone; 089 123 4567
+            <br>
+            &commat; <a href="#">name@email.com</a>
+        </footer>
+    </article>
+</body>
+</html>

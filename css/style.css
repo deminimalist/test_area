@@ -1,0 +1,87 @@
+/* Some browsers add little margins so setting margin and padding to zero here is called resetting. We will add margins and padding as we go.
+The 1px border will surround everything that doesn't explicitly have its own border properties. This is just so we can see the edges as we develop and will be removed when we are finished  */
+*{
+
+    border: 1px solid rgb(41, 35, 36);
+    margin:0;
+    padding:0;
+}
+
+
+#wrap{
+    max-width: 1400px;
+    margin:0 auto;
+    /* padding:0; */
+
+    /* background-color: #e4e4e4;
+    color: #545454 */
+}
+
+p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.4rem;
+}
+
+/* setting max-width to 100% means the image cannot stretch beyond the boundaries of its container 
+If we used the width setting (not max-width) and set it to 100%, this would have the unintended effect of strething smaller image elements to fill the container*/
+img{
+    max-width: 100%;
+}
+
+/* setting max-width to 100% means the image cannot stretch beyond the boundaries of its container */
+video{
+    max-width: 100%;
+    height: auto;
+}
+
+.header_logo{
+    min-width: 480px;
+    max-width: 30%;
+}
+
+
+.masthead {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    /* display: flex; (added from page 87)*/
+.nav_section{ 
+    background-color: rgb(230, 224, 224);
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;    
+    flex-wrap: wrap;
+    
+    /* padding: 20px; */
+    margin: 25px;
+    /* position: relative; */
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+} 
+
+
+/* Note the the last nav link is in a different class to the others so can be formatted separately.  */
+/* This bit is directed as the last nav link and all the others */
+.nav_link,
+.last_nav_link{
+    font-weight: bold;
+    text-decoration: none;
+    /* margin-right: 1rem; */
+    flex-direction: row;
+    margin-left: 1em;
+   }
+
+/* This bit is only for the last nav link */
+.last_nav_link{
+    color: red;
+    margin-left: auto;
+    }
+
+/* This bit is for all except the last nav link */
+.nav_link{
+    color: black;
+   
+}
